@@ -4109,28 +4109,42 @@
         column = panel.querySelector(selector);
       }
       const direction = Math.sign(event.deltaY);
+      const recruitColumn = column?.classList.contains("jk-helper-recruit-column");
       const candidates = singleLayout
-        ? [...nestedCandidates, columns]
-        : [...nestedCandidates, column];
-      const scrollTarget = candidates.find((element) => {
-        if (!(element instanceof HTMLElement) || element.scrollHeight <= element.clientHeight + 1) {
-          return false;
+        ? [columns]
+        : recruitColumn
+          ? [column]
+          : [...nestedCandidates, column];
+      for (const scrollTarget of candidates) {
+        if (!(scrollTarget instanceof HTMLElement)) {
+          continue;
         }
-        return direction > 0
-          ? element.scrollTop + element.clientHeight < element.scrollHeight - 1
-          : element.scrollTop > 1;
-      });
-      if (!(scrollTarget instanceof HTMLElement)) {
-        return;
+        const overflowY = getComputedStyle(scrollTarget).overflowY;
+        if (
+          !["auto", "scroll", "overlay"].includes(overflowY) ||
+          scrollTarget.scrollHeight <= scrollTarget.clientHeight + 1
+        ) {
+          continue;
+        }
+        const canMove = direction > 0
+          ? scrollTarget.scrollTop + scrollTarget.clientHeight < scrollTarget.scrollHeight - 1
+          : scrollTarget.scrollTop > 1;
+        if (!canMove) {
+          continue;
+        }
+        const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE
+          ? 24
+          : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
+            ? scrollTarget.clientHeight
+            : 1;
+        const previousScrollTop = scrollTarget.scrollTop;
+        scrollTarget.scrollTop += event.deltaY * multiplier;
+        if (scrollTarget.scrollTop !== previousScrollTop) {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
       }
-      const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE
-        ? 24
-        : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-          ? scrollTarget.clientHeight
-          : 1;
-      scrollTarget.scrollTop += event.deltaY * multiplier;
-      event.preventDefault();
-      event.stopPropagation();
     }, { capture: true, passive: false });
   }
 

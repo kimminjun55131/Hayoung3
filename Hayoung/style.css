@@ -3440,3 +3440,44 @@
     flex-direction: column !important;
   }
 }
+
+/* v2.0.7: one real vertical scroller per visible layout */
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-recruit-column.jk-helper-gamejob-split {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scrollbar-gutter: stable !important;
+}
+
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split > .jk-helper-recruit-stack,
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split > .jk-helper-workforce-section {
+  min-height: 0 !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+  overflow: visible !important;
+}
+
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split > .jk-helper-workforce-section {
+  grid-template-rows: auto auto !important;
+}
+
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split .jk-helper-workforce-summary,
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split .jk-helper-workforce-matches,
+#jk-helper-panel:not(.jk-helper-force-single-layout) .jk-helper-gamejob-split .jk-helper-recruit-stack {
+  overflow: visible !important;
+}
+
+#jk-helper-panel.jk-helper-force-single-layout .jk-helper-columns {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+#jk-helper-panel.jk-helper-force-single-layout .jk-helper-recruit-list,
+#jk-helper-panel.jk-helper-force-single-layout .jk-helper-recruit-stack,
+#jk-helper-panel.jk-helper-force-single-layout .jk-helper-workforce-summary,
+#jk-helper-panel.jk-helper-force-single-layout .jk-helper-workforce-matches {
+  max-height: none !important;
+  overflow: visible !important;
+}

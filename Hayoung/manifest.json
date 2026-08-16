@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Project Hayoung",
   "short_name": "Hayoung",
-  "version": "11.0.6",
-  "version_name": "2.0.6",
+  "version": "11.0.7",
+  "version_name": "2.0.7",
   "description": "Hayoung tracks recruiting activity and National Pension workforce changes on JobKorea and GameJob.",
   "permissions": [
     "storage"
