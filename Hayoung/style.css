@@ -3447,7 +3447,7 @@
   flex-direction: column !important;
   gap: 12px !important;
   overflow-x: hidden !important;
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
   scrollbar-gutter: stable !important;
 }
 
@@ -3471,7 +3471,8 @@
 
 #jk-helper-panel.jk-helper-force-single-layout .jk-helper-columns {
   overflow-x: hidden !important;
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
 }
 
 #jk-helper-panel.jk-helper-force-single-layout .jk-helper-recruit-list,
@@ -3480,4 +3481,12 @@
 #jk-helper-panel.jk-helper-force-single-layout .jk-helper-workforce-matches {
   max-height: none !important;
   overflow: visible !important;
+}
+
+#jk-helper-panel .jk-helper-recruit-column .jk-helper-recruit-history-section[open] > .jk-helper-recruit-list {
+  max-height: min(420px, 52vh) !important;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+  overscroll-behavior-y: contain !important;
 }

@@ -4089,10 +4089,7 @@
       const nestedSelector = [
         ".jk-helper-record-table-wrap",
         ".jk-helper-recruit-snapshot-picker",
-        ".jk-helper-recruit-list",
-        ".jk-helper-recruit-stack",
-        ".jk-helper-workforce-summary",
-        ".jk-helper-workforce-matches"
+        ".jk-helper-recruit-list"
       ].join(", ");
       for (let element = target; element && element !== panel; element = element.parentElement) {
         if (element instanceof HTMLElement && element.matches(nestedSelector)) {
@@ -4109,21 +4106,13 @@
         column = panel.querySelector(selector);
       }
       const direction = Math.sign(event.deltaY);
-      const recruitColumn = column?.classList.contains("jk-helper-recruit-column");
-      const candidates = singleLayout
-        ? [columns]
-        : recruitColumn
-          ? [column]
-          : [...nestedCandidates, column];
+      const outerScroller = singleLayout ? columns : column;
+      const candidates = [...new Set([...nestedCandidates, outerScroller])];
       for (const scrollTarget of candidates) {
         if (!(scrollTarget instanceof HTMLElement)) {
           continue;
         }
-        const overflowY = getComputedStyle(scrollTarget).overflowY;
-        if (
-          !["auto", "scroll", "overlay"].includes(overflowY) ||
-          scrollTarget.scrollHeight <= scrollTarget.clientHeight + 1
-        ) {
+        if (scrollTarget.scrollHeight <= scrollTarget.clientHeight + 1) {
           continue;
         }
         const canMove = direction > 0
