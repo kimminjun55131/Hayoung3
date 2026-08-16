@@ -18,6 +18,8 @@
 
 ## 설치
 
+오른쪽 릴리즈 최신판을 간다
+
 1. ZIP을 받아서 압축을 푼다.
 2. Chrome은 `chrome://extensions`, Brave는 `brave://extensions`로 들어간다.
 3. 개발자 모드를 켠다.
