@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Project Hayoung",
+  "short_name": "Hayoung",
+  "version": "11.0.6",
+  "version_name": "2.0.6",
+  "description": "Hayoung tracks recruiting activity and National Pension workforce changes on JobKorea and GameJob.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.jobkorea.co.kr/*",
+    "https://jobkorea.co.kr/*",
+    "https://m.jobkorea.co.kr/*",
+    "https://www.gamejob.co.kr/*",
+    "https://gamejob.co.kr/*",
+    "https://raw.githubusercontent.com/kimminjun55131/Hayoung3/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.jobkorea.co.kr/Recruit/GI_Read/*",
+        "https://jobkorea.co.kr/Recruit/GI_Read/*",
+        "https://m.jobkorea.co.kr/Recruit/GI_Read/*",
+        "https://www.gamejob.co.kr/Recruit/GI_Read/View*",
+        "https://gamejob.co.kr/Recruit/GI_Read/View*"
+      ],
+      "js": [
+        "workforce-data.js",
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
