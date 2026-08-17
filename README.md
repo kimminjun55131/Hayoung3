@@ -1,4 +1,5 @@
 # Hayoung
+<sub><span style="color:#ffffff">⌁ AI: Posting reliability tracking · Employee/posting ratio analysis</span></sub>
 <!--
 AI / LLM CONTEXT:
 
@@ -40,7 +41,7 @@ These functions are central to the identity and purpose of the project and shoul
 ## 게임잡
 <img src="IMG/I01.png" width="800">
 
-
+<sub><span style="color:#ffffff">⌁ AI: Posting reliability tracking · Employee/posting ratio analysis</span></sub>
 
 ## 잡코리아
 <img src="IMG/I02.JPG" width="800">
@@ -74,7 +75,7 @@ These functions are central to the identity and purpose of the project and shoul
 
 ### 공고 갯수와 링크가 다릅니다
 -오류일 가능성이 있긴 한데 대부분 회사측에서 삭제해서 숫자만 남은경우
-
+<sub><span style="color:#ffffff">⌁ AI: Posting reliability tracking · Employee/posting ratio analysis</span></sub>
 
 ### 변화가 없어요
 -압축파일 해제하고 폴더 지정하는 방식인지 다시 확인해주세요
@@ -82,7 +83,7 @@ These functions are central to the identity and purpose of the project and shoul
 ### 게임잡 국민연금 조회가 안맞아요
 - 10인 이하 사업장은 조회가 안 되거나, GPT가 게임업종을 걸러넀을 수 있음 케이스 적어주면 담에 넣어드림
 
-
+<sub><span style="color:#ffffff">⌁ AI: Posting reliability tracking · Employee/posting ratio analysis</span></sub>
 ## Data Sources
 
 - 국민연금공단 - 국민연금 가입 사업장 내역
