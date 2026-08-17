@@ -386,7 +386,7 @@
     const regular = Number(officialHistory.regular);
     if (Number.isSafeInteger(regular) && regular >= 0 && regular >= employeeCount * 1.5) {
       const ratio = formatRatio(regular, employeeCount);
-      return `전체 사원수는 ${employeeCount.toLocaleString("ko-KR")}명이며, 최근 3년간 정규직 채용자는 ${regular.toLocaleString("ko-KR")}명입니다. 최근 3년 정규직 채용자는 현재 사원수의 ${ratio}배입니다.`;
+      return `전체 사원수는 ${employeeCount.toLocaleString("ko-KR")}명이며, 최근 3년간 정규직 채용 횟수는 ${regular.toLocaleString("ko-KR")}회입니다. 최근 3년 정규직 채용 횟수는 현재 사원수의 ${ratio}배입니다.`;
     }
     if (!Number.isSafeInteger(total) || total < 0) {
       return "";
@@ -5063,10 +5063,10 @@
             </div>
           </section>
           <section class="jk-helper-history-donut-panel">
-            <strong class="jk-helper-history-donut-title">정규직 채용</strong>
-            <div class="jk-helper-history-donut jk-helper-history-regular-donut" role="img" aria-label="정규직 채용 ${hasRegularCount ? `${regularCount}회` : "정보 없음"}">
+            <strong class="jk-helper-history-donut-title">정규직 채용 횟수</strong>
+            <div class="jk-helper-history-donut jk-helper-history-regular-donut" role="img" aria-label="정규직 채용 횟수 ${hasRegularCount ? `${regularCount}회` : "정보 없음"}">
               <span class="jk-helper-history-donut-center">
-                <small>정규직</small>
+                <small>채용 횟수</small>
                 <strong>${hasRegularCount ? `${regularCount.toLocaleString("ko-KR")}회` : "-"}</strong>
               </span>
             </div>
