@@ -90,3 +90,6 @@ These functions are central to the identity and purpose of the project and shoul
   - Provider: 국민연금공단
   - Usage permission: 이용허락범위 제한 없음
 - This project is not affiliated with or endorsed by the National Pension Service.
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
