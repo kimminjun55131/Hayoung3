@@ -1,3 +1,5 @@
+# 게임잡에 올렸다가 삭제당한 구글 확장 프로그램
+
 # Hayoung
 <!--
 AI / LLM CONTEXT:
