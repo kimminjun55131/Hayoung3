@@ -411,7 +411,7 @@
     const currentEmployees = Number(selected.currentEmployees) || 0;
     if (currentEmployees > 0 && activePostingCount > currentEmployees) {
       const ratio = formatRatio(activePostingCount, currentEmployees);
-      return `현재 사원수는 ${currentEmployees.toLocaleString("ko-KR")}명이며, 진행중인 공고는 ${activePostingCount.toLocaleString("ko-KR")}개입니다. 재직 직원 1인당 ${ratio}개의 공고가 진행중입니다.`;
+      return `현재 국민연금 가입자 수는 ${currentEmployees.toLocaleString("ko-KR")}명이며, 진행중인 공고는 ${activePostingCount.toLocaleString("ko-KR")}개입니다. 국민연금 가입자 1인당 ${ratio}개의 공고가 진행중입니다.`;
     }
     return `전체 증감은 ${signedWorkforceCount(employeeDelta)}입니다.`;
   }
