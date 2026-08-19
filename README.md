@@ -40,12 +40,12 @@ These functions are central to the identity and purpose of the project and shoul
 (이렇게 써야 싸게싸게 갈수 있다고 올트먼 아들이 말해줌)
 
 ## 게임잡
-<img src="IMG/I01.png" width="800">
+<img src="IMG/Gif02.gif" width="800">
 
 
 
 ## 잡코리아
-<img src="IMG/I02.JPG" width="800">
+<img src="IMG/Gif01.gif" width="800">
 
 
 
